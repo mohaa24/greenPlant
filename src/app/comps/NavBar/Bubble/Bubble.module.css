@@ -6,14 +6,33 @@
 	top: 4%;
 	width: 450px;
 	height: 450px;
-	background: #17141d73;
+	background: #c7c1d573;
 	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
 	will-change: border-radius, transform, opacity;
 	animation: sliderShape 5s linear infinite;
 	display: block;
-	z-index: 1;
+	z-index: 0;
 	-webkit-animation: sliderShape 5s linear infinite;
     pointer-events: none;
+}
+@media (max-width:600px){
+   .slider_thumb::before {
+	position: absolute;
+    opacity: 10%;
+	content: "";
+	left: 13%;
+	top: 14%;
+	width: 250px;
+	height: 250px;
+	background: #c7c1d573;
+	border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+	will-change: border-radius, transform, opacity;
+	animation: sliderShape 5s linear infinite;
+	display: block;
+	z-index: 0;
+	-webkit-animation: sliderShape 5s linear infinite;
+    pointer-events: none;
+} 
 }
 @keyframes sliderShape{
   0%,100%{

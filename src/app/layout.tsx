@@ -10,7 +10,6 @@ export default function RootLayout({
 }>) {
   return (
     <div className="h-[100vh] 
-    bg-[linear-gradient(310deg,#b1e4eb,#ffffffd9)]
     
     ">
       <NavBar />

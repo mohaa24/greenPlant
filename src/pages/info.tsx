@@ -2,11 +2,10 @@ import Link from "next/link"
 
 export default function Info (){
     return (
-      <div className="flex justify-center pt-10">
-        <div className="w-4/6">
-          <Link href={'/'}>
-          
-            <div className="text-blue-600 pb-2 hover:text-blue-500 hover:cursor-pointer z-100">{`< Back`}</div>
+      <div className="flex justify-center mt-10 text-[#EAEAEA]">
+        <div className="w-4/6 border-2 border-[#8080801a] p-5 rounded-[15px]">
+          <Link href={"/"}>
+            <div className="text-[#888888] pb-2 hover:text-[#EAEAEA] hover:cursor-pointer z-100">{`←  Back`}</div>
           </Link>
           <section className=" pb-5">
             <h1 className="text-3xl pb-5">
