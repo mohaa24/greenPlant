@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import uploadIcon from '../../public/upload.png';
+import { useAppContext } from "@/app/context/appContext";
 function Analyse() {
+    const {file, setFile} = useAppContext()
   const hiddenFileInput = useRef(null);
-  const [file, setFile] = useState();
+//   const [file, setFile] = useState();
   const [fileDataURL, setFileDataURL] = useState(null);
+const imageMimeType = /image\/(png|jpg|jpeg)/i;
 
   const handleChange = (event) => {
     const fileUploaded = event.target.files[0];
@@ -15,11 +18,11 @@ function Analyse() {
       return;
     } else {
       setFile(fileUploaded);
-      console.log(event.target, "file");
+      console.log(fileUploaded, "file");
     }
   };
-  const handleClick = (event) => {
-    hiddenFileInput.current.click();
+  const handleClick = () => {
+    hiddenFileInput && hiddenFileInput.current.click();
   };
 
 
@@ -45,15 +48,16 @@ function Analyse() {
   }, [file]);
   return (
     <div className="flex justify-center items-center h-[90vh]">
-      <div className=" w-5/6 md:w-3/6 text-center flex-col border bg-[#0a0a0a]/50 border-[#8080801a] py-10 rounded-[15px] backdrop-blur-sm">
-        <Link href={"/"} className="flex justify-start pl-10">
+      <div className=" w-5/6 md:w-3/6 text-center flex flex-col justify-center items-center border bg-[#0a0a0a]/50 border-[#8080801a] py-10 rounded-[15px] backdrop-blur-sm">
+        <Link href={"/"} className="flex justify-start pl-10 w-full">
           <div className="text-[#888888] pb-2 hover:text-[#EAEAEA] hover:cursor-pointer z-100">{`←  Back`}</div>
         </Link>
         <h1 className="pb-5 bg-gradient-to-br from-[#edededd1]  to-[#EDEDED] bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-1 drop-shadow-sm md:text-7xl md:leading-[5rem]">
           Upload your image...
         </h1>
+        <p className=" text-white cursor-pointer"> or Use a random image..</p>
         <div
-          className="flex justify-center m-10 border border-dotted rounded-lg p-5 border-white-2"
+          className="flex justify-center m-10 border border-dotted rounded-lg p-5 border-white-2 w-4/6 cursor-pointer"
           onClick={handleClick}
         >
           <input
@@ -83,13 +87,12 @@ function Analyse() {
                     borderRadius: 12,
                   }
             }
-            layout="responsive"
           ></img>
         </div>
         <p className="text-white m-5">
           ***Image files with png, jpeg, jpg format are supported
         </p>
-        <Link href={"/results"}>
+        <Link href={"/results"} className={`${!file ? ' pointer-events-none': ''}`} >
           <button
             className="bg-white hover:bg-blue-700 text-black font-bold py-2 px-4 rounded-full"
             onClick={() => {}}
