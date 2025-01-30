@@ -12,8 +12,9 @@ const apiClient = axios.create({
       try {
           const response = await apiClient.post("/analyze", formData);
           return response.data;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {
-        alert(error.error)
+        
       }
   
 };

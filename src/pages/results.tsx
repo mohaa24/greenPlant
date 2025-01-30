@@ -1,12 +1,17 @@
 import { useAppContext } from "@/app/context/appContext";
 import AnalyseImage from "@/app/services/api";
-import axios from "axios";
 import { useEffect } from "react";
 
 export default function Results() {
   const {file} = useAppContext();
-    const fileURL = URL.createObjectURL(file);
 
+  let fileURL = '';
+   useEffect(() => {
+     if (file) {
+        fileURL = URL.createObjectURL(file);
+       return () => URL.revokeObjectURL(fileURL);
+     }
+   }, [file]);
   const predict = async (formData:FormData)=>{
     const response = await AnalyseImage(formData);
     console.log(response);

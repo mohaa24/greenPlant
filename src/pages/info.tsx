@@ -43,7 +43,7 @@ export default function Info (){
               strategies, and mitigate potential crop losses.
             </p>
             <p>
-              To achieve the project's goals, a diverse collection of plant
+              To achieve the project&apos;s goals, a diverse collection of plant
               image dataset is needed, including both healthy plants and those
               affected by different diseases. The dataset will serve as the
               foundation for training and evaluating the machine learning model.
@@ -51,7 +51,7 @@ export default function Info (){
               dataset, including resizing images, removing noise or artifacts,
               and utilizing data augmentation methods such as rotation, scaling,
               or flipping. These steps will ensure consistency and enhance the
-              model's ability to generalize and accurately classify unseen plant
+              model&apos;s ability to generalize and accurately classify unseen plant
               images. For Plantvillage could be utilized. This data set contains
               around 50,000 images of various species as shown below.
             </p>

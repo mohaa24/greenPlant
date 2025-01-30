@@ -6,7 +6,7 @@ import uploadIcon from '../../public/upload.png';
 import { useAppContext } from "@/app/context/appContext";
 function Analyse() {
     const {file, setFile} = useAppContext()
-  const hiddenFileInput = useRef(null);
+  const hiddenFileInput = useRef<HTMLInputElement | null>(null);
 //   const [file, setFile] = useState();
   const [fileDataURL, setFileDataURL] = useState(null);
 const imageMimeType = /image\/(png|jpg|jpeg)/i;
@@ -22,12 +22,15 @@ const imageMimeType = /image\/(png|jpg|jpeg)/i;
     }
   };
   const handleClick = () => {
-    hiddenFileInput && hiddenFileInput.current.click();
+   
+  if (hiddenFileInput.current) {
+      hiddenFileInput.current.click();
+    }  
   };
 
 
   useEffect(() => {
-    let fileReader:any;
+    let fileReader
     let isCancel = false;
     if (file) {
       fileReader = new FileReader();

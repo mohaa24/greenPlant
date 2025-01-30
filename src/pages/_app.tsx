@@ -6,7 +6,7 @@ export default function MyApp({
   pageProps,
 }: {
   Component: React.ElementType,
-  pageProps:any}) {
+  pageProps}) {
   return (
     <Layout>
       <Component {...pageProps} />

@@ -2,9 +2,9 @@
 import { Dispatch, ReactNode, SetStateAction, createContext, useContext, useState } from "react";
 
 interface AppContextProps {
-  file: any;
+  file,
   setFile: Dispatch<SetStateAction<null>>;
-  results: any;
+  results,
   setResults: Dispatch<SetStateAction<null>>;
 }
 
