@@ -9,7 +9,7 @@ const NavBar = (): JSX.Element => {
     <nav className=" flex flex-row justify-center border-b bottom-2 bg-black/10 border-[#8080801a] backdrop-blur-xl">
       <div className="py-3 flex justify-between text-white w-full px-5 md:w-5/6">
         <Link href={"/"} className="flex items-center text-xl">
-          Green|Plan
+          Green|Plant
         </Link>
         <div className=" ">
           <Link href={"info"}>
